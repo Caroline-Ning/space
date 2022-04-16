@@ -1,0 +1,181 @@
+extends navFooter
+
+block variables
+  - var title = 'S P A C E'
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/home.css')
+
+block scripts
+  script(async, defer, src='/javascripts/home.js')
+
+block parallax 
+  .parallax
+    .header__title
+      h1 Welcome to &nbsp
+        //- Blue highlight effect
+        span.highlight SPACE
+      span
+      h4| When life is crowded, this is a space for you to breathe, relax, feel accepted, and write down your thoughts.
+        //- span占位用
+      span
+      button.learnMore Learn more
+
+block content 
+  .top
+    .about.title About
+    .aboutContent
+        h2 This community means to...
+        p
+        | This is a community that focuses on personality types and personal development. This website
+        | contains three sections: accessible knowledge about mainstream personality tests, which helps you to
+        | improve your common sense and science literal of these tests; forums with categories,
+        | including personality types, personal development, mental health, and beyond; tea party, which are
+        | live audio discussions with preset topics.
+        br
+        br
+        | This is a place to discover yourself, build
+        |                     collective identity, and join the community filled with understanding,
+        |                     healing, and the collision of ideas.
+    .middleImg
+        img(src='/images/coffee.jpg' width='100%')
+    .cata.title Catalogue
+    .cataContent
+        .type(data-type='1')
+            span.under 1. MBTI
+            br
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        .type(data-type='2')
+            span.under 2. Enneagram
+            br
+            | Nulla velit quam, placerat ac turpis non, porta interdum
+        .type(data-type='3')
+            span.under 3. Socionic
+            br
+            |Fusce in
+            |                     leo blandit, interdum nulla quis
+        .type(data-type='4')
+            span.under
+                | 4.
+                | Big Five
+            br
+            | Ut suscipit placerat porta. Aenean ultrices enim
+    .border
+    .guide
+        | Quick Start Guide
+    .layer
+    #type1.typeName
+        | MBTI
+    #typeDes1.typeDes Do the MBTI test 
+      a(href='https://www.16personalities.com/free-personality-test' target='_blank')
+        span.highlight(style='font-size: 1.1rem') HERE!
+      br
+      span.blueP This quick start guide contains test links, accessible background information about the tests, theoretical foundations, different comments on the credibility of the tests, and the relation between tests.
+      p Personalities tests and relevant communities have emerged as a sub-culture in recent years. The mainstream personality tests, including mbti, enneagram, socionics, and big five, have prompted many discussions on social media and forums.
+
+    #type2.typeName Enneagram
+    #typeDes2.typeDes
+        p
+        | Do the Enneagram test 
+        a(href='https://www.truity.com/test/enneagram-personality-test' target='_blank')
+            span.highlight(style='font-size: 1.1rem;\
+            ') HERE!
+        br
+        | However, as these tests face the public rather than psychologists, they
+        |                     have various evaluations and different degrees of academic recognition. For instance, despite its
+        |                     popularity, mbti is not identified as a scientific method to determine personalities. It is
+        |                     sometimes criticized as entertainment or pseudoscience, but its foundation, Jung&rsquo;s cognitive
+        |                     processes, is considered a reliable theory.
+    #type3.typeName Socionic
+    #typeDes3.typeDes
+        p
+        | Do the Socionic test 
+        a(href='https://www.sociotype.com/tests/' target='_blank')
+            span.highlight(style='font-size: 1.1rem;\
+            ') HERE!
+        br
+        |                     Additionally, the different tests can be confused for beginners learning personality types, and as a
+        |                     result, people may join the discussion without fully understanding the tests and their meanings. A
+        |                     user on the reddit mbti forum once complained that people might post ideas even before understanding
+        |                     critical concepts of the tests.
+        
+    #type4.typeName Big Five
+    #typeDes4.typeDes
+        p
+        | Do the Socionic test 
+        a(href='https://openpsychometrics.org/tests/IPIP-BFFM/' target='_blank')
+            span.highlight(style='font-size: 1.1rem;\
+            ') HERE!
+        br
+        |                     Besides, for users who want to learn more about their personalities and inner worlds, it is crucial
+        |                     to know the credibility of tests and their theoretical foundation and evaluate the results based on
+        |                     the credibility of the test.
+        br
+        span.blueP
+            | Therefore, this guide will help you know more about the tests and prepare you to
+            | join the discussions.
+
+  .join 
+    .talk Join the Talk 
+    .desc Welcome to our forum! This is a great place to share your ideas and find the answers you are looking for. 
+    a(href='/forum').enter Enter
+
+  .tea 
+    .want Want some live discussions?
+    .check Check out the &nbsp
+      a(href="/teaparty")
+        span.highlight Tea Parties! 
+    .slider
+      .slide.slide--1
+        .testimonial
+          h5.testimonial__header Best discussion ever
+          blockquote.testimonial__text
+            | I love live audio discussions because it feels like I obtain
+            | more privacy in front of strangers. I can freely express my ideas
+            | and it is less formal than a live video meeting. I met some interesting
+            | people in one tea party and I will definitely join another one
+            | later.
+          address.testimonial__author
+            img.testimonial__photo(src='images/user1.jpg', alt='1')
+            h6.testimonial__name Aarav Lynn
+            p.testimonial__location San Francisco, USA
+      .slide.slide--2
+        .testimonial
+          h5.testimonial__header
+            | Fun topic, fun experience
+          blockquote.testimonial__text
+            | Quisquam itaque deserunt ullam, quia ea repellendus provident,
+            | ducimus neque ipsam modi voluptatibus doloremque, corrupti
+            | laborum. Incidunt numquam perferendis veritatis neque repellendus.
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+            | deserunt exercitationem deleniti.
+          address.testimonial__author
+            img.testimonial__photo(src='images/user2.jpg', alt='1')
+            h6.testimonial__name Miyah Miles
+            p.testimonial__location London, UK
+      .slide.slide--3
+        .testimonial
+          h5.testimonial__header
+            | A great choice if you have something to say
+          blockquote.testimonial__text
+            | Debitis, nihil sit minus suscipit magni aperiam vel tenetur
+            | incidunt commodi architecto numquam omnis nulla autem,
+            | necessitatibus blanditiis modi similique quidem. Odio aliquam
+            | culpa dicta beatae quod maiores ipsa minus consequatur error sunt,
+            | deleniti saepe aliquid quos inventore sequi. Necessitatibus id
+            | alias reiciendis, perferendis facere.
+          address.testimonial__author
+            img.testimonial__photo(src='images/user3.jpg', alt='3')
+            h6.testimonial__name Francisco Gomes
+            p.testimonial__location Lisbon, Portugal
+      button.slider__btn.slider__btn--left &larr;
+      button.slider__btn.slider__btn--right &rarr;
+      .dots
+
+
+
+
+
+
+
+

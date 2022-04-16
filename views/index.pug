@@ -1,0 +1,56 @@
+extends navFooter
+
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/mbti.css')
+
+block bar
+  .bar 
+    div 
+      a(href="/forum") Categories
+    block subCategory
+      //- div 
+      //-   a(href="/forum/") #{title}
+    input(
+      type='text'
+      id='search'
+    )
+
+
+block content 
+  block title
+  //- .title
+  //-   span.cateName MBTI 
+  //-   span Why MBTI? Description of this category. Engage the audience.
+
+  .allPosts 
+    block postsTop
+    //- .postsTop
+    //-   span
+    //-     span.smallCateName MBTI &nbsp&nbsp
+    //-     span Lorem Ipsum
+    //-   span.new
+    //-     a(href="/forum/mbti/createnew") Create New Post
+    .postsMeta 
+      span
+        i.fa-regular.fa-message
+      span
+        i.fa-regular.fa-heart
+      span
+        i.fa-regular.fa-user
+        
+    .posts
+      each post in posts
+        .post
+          a(href="/forum/"+post.category +'/'+ post.postId, title=post.title)= post.title
+          span.count #{post.commentCount}
+          span #{post.authorName}
+
+      
+
+
+
+
+
+
+

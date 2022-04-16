@@ -1,0 +1,139 @@
+#search {
+  margin-left: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* background: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+    url("../images/bar.jpg") no-repeat; */
+  /* background-size: cover; */
+  height: 200px;
+
+  margin-top: 8px;
+}
+
+.title span {
+  color: #fff;
+}
+
+.cateName {
+  color: #fff;
+
+  font-family: "libre baskerville", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.15rem;
+}
+
+.allPosts {
+  border: 1px solid rgb(213, 213, 213);
+  width: 95%;
+  align-self: center;
+
+  margin-top: 20px;
+
+  font-family: "Raleway", sans-serif;
+}
+
+.postsTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+}
+
+.postsTop span {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.postsTop span:first-child {
+  width: 170px;
+}
+
+.smallCateName {
+  border-right: 1px solid rgb(213, 213, 213);
+}
+
+.new {
+  background: rgb(58, 58, 58);
+
+  width: 135px;
+  text-align: center;
+  height: 30px;
+  padding-top: 7px;
+}
+
+.new a {
+  color: rgb(213, 213, 213);
+  text-decoration: none;
+}
+
+.new a:hover {
+  cursor: pointer;
+}
+
+.postsMeta {
+  border-top: 1px solid rgb(213, 213, 213);
+  border-bottom: 1px solid rgb(213, 213, 213);
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 45px;
+}
+
+.postsMeta i {
+  font-size: 1.1rem;
+}
+
+.postsMeta span {
+  margin-right: 10%;
+  margin-left: 2%;
+}
+
+.grey {
+  color: rgb(31, 31, 31);
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 40px;
+
+  border-bottom: 1px solid rgb(213, 213, 213);
+
+  align-self: center;
+  justify-self: center;
+}
+
+.post:last-child {
+  border-bottom: none;
+}
+
+.post span,
+.post a {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.post a {
+  color: var(--color-darkGrey);
+  font-weight: bolder;
+}
+
+.count {
+  margin-left: 36.3%;
+}

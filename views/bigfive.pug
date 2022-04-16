@@ -1,0 +1,24 @@
+extends index 
+
+block variables
+  - const title = 'Big Five'
+
+block subCategory
+  div 
+    a(href="/forum/bigfive") Big Five
+
+
+block title 
+  .title(style="background:linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),url(../images/morning.jpg) no-repeat;background-size: cover;")
+    span.cateName Big Five 
+    span Why Big Five? Something to be added here to engage the audience.
+
+
+block postsTop 
+  .postsTop
+    span
+      span.smallCateName Big Five &nbsp&nbsp
+      span Lorem
+    span.new
+      a(href="/forum/bigfive/createnew") Create New Post
+

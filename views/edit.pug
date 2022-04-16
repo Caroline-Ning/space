@@ -1,0 +1,54 @@
+extends navFooter
+
+block variables
+  - var title = post.title
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/newPost.css')
+
+
+block bar
+  .bar 
+    div 
+      a(href="/forum") Categories 
+    div 
+      if(post.category=='mbti')
+        a(href="/forum/mbti") MBTI
+      if(post.category!=='mbti'&& post.category!=='bigfive')
+        a(href="/forum/"+post.category.toLowerCase()) #{post.category[0].toUpperCase()+post.category.slice(1)}
+      if(post.category=='bigfive')
+        a(href="/forum/bigfive") Big Five
+    input(
+      type='text'
+      id='search'
+    )
+
+
+block content
+  .wrap
+      .inner
+        .postTitle Edit a Post
+
+        .div
+          form(method="post")
+            .form-group
+              input.yourTitle(type="text", name="title", value=post.title, required)
+            .form-group
+              textarea(name="body", rows="6", required)= post.body
+            .btnDiv
+              button.btnPub(type="submit") Update
+
+
+      
+  //- h2.text-center Edit Post
+
+  //- .row
+  //-   .offset-sm-2.col-sm-8
+  //-     form(method="post")
+  //-       .form-group
+  //-         label(for="title") Post Title
+  //-         input.form-control#title(type="text", name="title", value=post.title, required)
+  //-       .form-group
+  //-         label(for="body") Post Body
+  //-         textarea.form-control#post(name="body", rows="6", required)= post.body
+  //-       button.btn.btn-primary.submit-btn(type="submit") Update

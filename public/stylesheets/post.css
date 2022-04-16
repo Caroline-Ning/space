@@ -1,0 +1,201 @@
+.main {
+  width: 75%;
+}
+
+.post {
+  border-bottom: 1px solid rgb(213, 213, 213);
+  display: grid;
+  grid-row-gap: 2em;
+
+  padding-top: 2%;
+}
+
+.comment {
+  margin-top: 20px;
+}
+
+.reply {
+  padding-top: 3%;
+  padding-bottom: 1%;
+  font-size: 0.9rem;
+  margin-left: 10%;
+}
+
+.replyItem {
+  margin-top: 1.5em;
+  border-bottom: 1px solid rgb(213, 213, 213);
+  display: grid;
+  grid-row-gap: 1.5em;
+}
+
+.wrap {
+  background-color: rgb(247, 247, 247);
+
+  margin-top: 15px;
+  padding: 2%;
+  border-top: 1px solid rgb(190, 168, 168);
+  display: flex;
+}
+
+.actions {
+  margin-top: 90px;
+  margin-bottom: 20px;
+
+  display: flex;
+}
+
+.commentActions {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  display: flex;
+}
+
+.replyActions {
+  /* margin-top: 20px; */
+  margin-bottom: 10px;
+
+  display: flex;
+}
+
+.actions div,
+.commentActions div,
+.replyActions div {
+  margin-right: 5%;
+}
+
+.actions div:last-child {
+  margin-left: auto;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.actions a {
+  text-decoration: none;
+}
+
+.writeComment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 50px;
+}
+
+.writeReply {
+  margin-left: 10%;
+  margin-top: 2rem;
+}
+
+.writeReply button {
+  width: 55px;
+  display: block;
+  margin-left: 89.5%;
+}
+
+.btn {
+  background: rgb(58, 58, 58);
+  text-align: center;
+  color: white;
+  height: 30px;
+  padding-top: 7px;
+
+  letter-spacing: 0.1rem;
+  font-family: "Raleway", sans-serif;
+}
+.btn span {
+  color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+.commentScroll:hover {
+  cursor: pointer;
+}
+
+.publishBtn {
+  width: 5em;
+  height: 25px;
+  padding-top: 2px;
+}
+
+.writeComment textarea,
+.writeReply textarea {
+  border: 0.5px solid rgb(213, 213, 213);
+
+  margin-top: 30px;
+  outline: none;
+  background-color: rgb(247, 247, 247);
+
+  font-family: "Poppins", sans-serif;
+  color: #3a3a3a;
+  font-size: 1.1rem;
+}
+.writeReply textarea {
+  margin-top: 0;
+}
+
+.writeComment > form > button {
+  display: block;
+  margin-left: auto;
+  margin-top: 5px;
+}
+
+.writeComment > form {
+  margin-right: auto;
+}
+
+.commentBtn {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.side {
+  width: 24%;
+  margin-left: auto;
+}
+
+.side div {
+  margin-bottom: 25px;
+  font-family: "Raleway", sans-serif;
+}
+
+.meta {
+  width: 100%;
+  border: 1px solid rgb(213, 213, 213);
+  padding-top: 30px;
+  padding-left: 25px;
+}
+
+.dateWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authorDate {
+  display: flex;
+  justify-content: space-between;
+}
+.authorDate div:last-child {
+  margin-right: 5%;
+}
+
+.topPost {
+  border-bottom: 1px solid rgb(125, 125, 125);
+  padding-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.replyBtn:hover,
+.commentActions div:hover,
+.actions div:hover,
+.replyActions div:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+//- <div class="container">
+//-     <h1>Quizzes</h1>
+//-     <p>Find all available quizzes here</h1>
+//-     <div class="quizzes">
+//-       <% quizzes.forEach(quiz => { %>
+//-         <a href="./quiz?name=<%- quiz.slug %>"><button><%= quiz.title %></button></a>
+//-       <% }) %>
+//-     </div>
+//-   </div>
+[ { title: 'US Common Knowledge', slug: 'quizData' } ]
+/quiz?name=quiz.quizData
+.container 
+  h1 Quizzes 
+  p Find all available quizzes here
+  .quizzes
+    //- each quiz in quizzes 
+       quiz

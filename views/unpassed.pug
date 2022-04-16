@@ -1,0 +1,9 @@
+extends navFooterBar
+
+block variables
+  - var title = "test Unauthenticated"
+
+block content
+  .wrap
+    h2 Whoops!
+    p(style='line-height:3rem') You must be a member before you create a post or comment. Please click #[a(href="/quiz/"+userId) here] to take the quiz.

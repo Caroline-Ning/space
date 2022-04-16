@@ -1,0 +1,51 @@
+extends navFooter
+
+block variables
+  - var title = "New Post"
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/newPost.css')
+
+
+block bar
+  .bar 
+    div 
+      a(href="/forum") Categories 
+    div 
+      if(category=='Mbti')
+        a(href="/forum/mbti") MBTI
+      if(category!=='Mbti')
+        a(href="/forum/"+category.toLowerCase()) #{category}
+    input(
+      type='text'
+      id='search'
+    )
+
+block content
+  .wrap
+    .inner
+      .postTitle Create a Post in #{category}
+
+      //- if post != undefined
+      //-   .div
+      //-     p Your new post was created successfully! #[a(href="/forum/"+post.category +'/'+ post.slug) View it?]
+
+      .div
+          form(method="post")
+            .form-group
+              input.placeHolder.yourTitle(type="text", name="title", placeholder="Your title...", required)
+            .form-group
+              textarea.placeHolder(name="body", rows="8",placeholder="Type in your post...", required)
+            .btnDiv
+              button.btnPub(type="submit") Publish
+
+    //- .div
+    //-     h2.your-posts Your Posts
+    //-     ul.edit
+    //-       each post in posts
+    //-         li
+    //-           a(href="/" + post.slug, title=post.title)= post.title
+    //-           form.hidden(method="post", action="/" + post.slug + "/delete")
+    //-             button Delete
+    //-           a(href="/" + post.slug + "/edit", title=post.title)
+    //-             button Edit

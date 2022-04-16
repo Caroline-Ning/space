@@ -1,0 +1,34 @@
+extends navFooter
+
+block variables
+  - var title = 'Forum'
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/forum.css')
+
+block scripts
+  script(defer='' src='/javascripts/forum.js')
+
+block content
+  .banner
+    p.title Explore Our Forum
+    p.subt Check out our forum and join the discussion.
+
+  .forums
+    .cat#mbti
+      a(href='/forum/mbti')
+        .layer
+        .link.linkBg MBTI 
+    .cat#enne
+      a(href='/forum/enneagram')
+        .layer
+        .link.linkBg Enneagram
+    .cat#soci
+      a(href='/forum/socionic')
+        .layer
+        .link.linkBg Socionic 
+    .cat#bigf
+      a(href='/forum/bigfive')
+        .layer
+        .link.linkBg Big Five 
+  

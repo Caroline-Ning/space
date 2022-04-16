@@ -1,0 +1,73 @@
+p,
+input {
+  font-size: 1.1rem;
+}
+
+/* .newPost {
+  background-color: rgb(247, 247, 247);
+  border-top: 1px solid rgb(213, 213, 213);
+  margin-top: 10px;
+} */
+
+.inner {
+  width: 76%;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.postTitle {
+  margin-bottom: 40px;
+}
+
+.yourTitle {
+  margin-bottom: 10px;
+}
+
+.form-group input,
+textarea {
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  border: none;
+  font-family: "Poppins", sans-serif;
+  color: #3a3a3a;
+
+  /* border: 1px solid rgb(213, 213, 213); */
+}
+
+.placeHolder::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+}
+
+.yourTitle::placeholder,
+.yourTitle {
+  font-size: 1.5rem;
+}
+
+.form-group input {
+  height: 2.5rem;
+}
+
+.btnPub {
+  background: rgb(58, 58, 58);
+  text-align: center;
+  color: white;
+  height: 30px;
+
+  width: 80px;
+
+  letter-spacing: 0.1rem;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  outline: none;
+}
+
+.btnPub:hover {
+  cursor: pointer;
+}
+
+.btnDiv {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}

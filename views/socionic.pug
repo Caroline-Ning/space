@@ -1,0 +1,23 @@
+extends index 
+
+block variables
+  - const title = 'Socionic'
+
+block subCategory
+  div 
+    a(href="/forum/socionic") Socionic
+
+block title 
+  .title(style="background:linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),url(../images/leaf.jpg) no-repeat;background-size: cover;")
+    span.cateName Socionic 
+    span Why Socionic? Something to be added here to engage the audience.
+
+
+block postsTop 
+  .postsTop
+    span
+      span.smallCateName Socionic &nbsp&nbsp
+      span Lorem
+    span.new
+      a(href="/forum/socionic/createnew") Create New Post
+

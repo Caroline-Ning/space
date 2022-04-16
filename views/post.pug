@@ -1,0 +1,139 @@
+extends navFooter
+
+block variables
+  - var title = post.title
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/post.css')
+
+block scripts
+  script(async, defer, src='/javascripts/post.js')
+
+block bar
+  .bar 
+    div 
+      a(href="/forum") Categories 
+    div
+      if post.category=='mbti'
+        a(href="/forum/"+post.category) MBTI
+      if post.category!=='mbti'
+        a(href="/forum/"+post.category) #{post.category[0].toUpperCase()+post.category.slice(1)}
+    input(
+      type='text'
+      id='search'
+    )
+
+block content
+  .wrap
+    .main 
+      .post.topPost 
+        .authorDate
+          div
+            i.fa-regular.fa-user
+            span &nbsp #{post.authorName}
+          div
+            span &nbsp #{post.date}
+        .postTitle #{title}
+        p !{post.body}
+        .actions
+          div
+            i.fa-regular.fa-message
+            span.commentScroll &nbsp Comment
+          div
+            i.fa-regular.fa-heart
+            span &nbsp Like
+
+
+          if post.isAuthor==true
+            div
+              i.fa-regular.fa-pen-to-square &nbsp
+              a(href="/forum/"+post.category+"/" + post.postId + "/edit", title=post.title)
+                button Edit
+            div
+              form(method="post", action="/forum/"+post.category+"/" + post.postId + "/delete")                
+                button 
+                  i.fa-regular.fa-trash-can &nbsp
+                  span Delete
+          div
+            i.fa-regular.fa-share-from-square
+            span &nbsp Share
+
+      if comments!=undefined
+        each comment in comments           
+          .post.comment
+            .dateWrap
+              div
+                i.fa-regular.fa-user
+                span &nbsp #{comment.authorName}
+              div
+                span &nbsp #{comment.date}
+          
+            div
+              p #{comment.body}            
+            .commentActions
+              .replyBtn(data-id=comment.commentId)
+                i.fa-regular.fa-message
+                span &nbsp Reply
+              div
+                i.fa-regular.fa-heart
+                span &nbsp Like
+              div
+                if comment.myComment==true 
+                  form(method="post", action="/forum/"+post.category+"/" + post.postId + "/deleteComment/"+comment.commentId)
+                    button 
+                      i.fa-regular.fa-trash-can &nbsp
+                      span Delete
+
+          .writeReply(id=comment.commentId).hidden
+            form(method="post", action="/forum/"+post.category+"/" + post.postId + "/"+comment.commentId+"/reply")
+              textarea(name="reply", rows="3", cols="70",placeholder="Type in your reply...",maxlength="150")
+              button.btn.publishBtn Reply
+            
+            
+          .reply
+            if(replys!=undefined)
+              each reply in replys
+                if(reply.commentId==comment.commentId)
+                  .replyItem 
+                      div
+                        .dateWrap
+                          div 
+                            i.fa-regular.fa-user &nbsp
+                            span #{reply.authorName}
+                          div #{reply.date}
+                    
+                      div
+                        p #{reply.body}
+
+                
+                      .replyActions
+                        div
+                          i.fa-regular.fa-heart
+                          span &nbsp Like
+                        div
+                          if reply.myReply==true 
+                            form(method="post", action="/forum/"+post.category+"/" + post.postId + "/"+comment.commentId+'/'+reply.replyId+'/deleteReply')                          
+                              button 
+                                i.fa-regular.fa-trash-can &nbsp 
+                                span Delete
+    
+            
+      
+      .writeComment 
+        form(method="post")
+          textarea(name="body", rows="8", cols="75",placeholder="Type in your comment...")
+          button.btn.publishBtn(type="sumbit") Publish
+
+    .side 
+      .btn.commentBtn.commentScroll
+        span Comment
+      .meta
+        div
+          i.fa-regular.fa-message 
+          span &nbsp &nbsp
+          span#count comments
+        div
+          i.fa-regular.fa-heart 
+          span &nbsp&nbsp10
+
+

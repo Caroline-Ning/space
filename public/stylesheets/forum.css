@@ -1,0 +1,73 @@
+.forums {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 20px;
+}
+
+.banner {
+  height: 300px;
+  padding-top: 100px;
+
+  text-align: center;
+  line-height: 3.7rem;
+  letter-spacing: 0.05rem;
+}
+
+.title {
+  font-family: "libre baskerville", sans-serif;
+  color: rgb(69, 69, 69);
+  font-size: 2rem;
+}
+
+.subt {
+  font-family: "Raleway", sans-serif;
+  color: rgb(91, 91, 91);
+}
+
+.cat {
+  height: 300px;
+  width: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#mbti {
+  background-image: url(../images/forum/bench.jpg);
+}
+#enne {
+  background-image: url(../images/forum/lemon.jpg);
+}
+
+#soci {
+  background-image: url(../images/forum/water.jpg);
+}
+#bigf {
+  background-image: url(../images/forum/roll.jpg);
+}
+
+.layer {
+  transition: all 0.3s;
+  height: 300px;
+  width: 450px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
+  opacity: 0;
+  z-index: 0;
+}
+
+.link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%);
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+
+  padding: 0 10px;
+}
+
+.linkBg {
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.4);
+}

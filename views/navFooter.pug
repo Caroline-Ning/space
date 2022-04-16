@@ -1,0 +1,65 @@
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    //- title S P A C E
+    title #{title}
+
+    block css
+    link(rel='icon' type='image/png' sizes='32x32' href='/images/cube-small.png')
+    link(rel='stylesheet', href='/stylesheets/navFooter.css')
+
+    //- font awesome
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer")
+
+    block scripts
+    //- script(async, defer, src='/javascripts/navFooter.js')
+
+
+
+  body
+    div.header
+      nav.nav
+        a(href='/')
+          img#logo.nav__logo(src='/images/logo-sec2.png' alt='SPACE logo')
+        .nav__links
+          .nav__item
+            a.nav__link(href='/') Home
+          .nav__item
+            a.nav__link(href='/forum') Forum
+          .nav__item
+            a.nav__link(href='#section--3') Tea Party
+          .nav__item.dropdown
+            div
+              i.fa-regular.fa-user &nbsp
+              .dropBtn#dropBtn
+                span User
+            .dropContent#dropContent
+              
+              if user == undefined
+                div
+                  a.nav__link(href="/google") Log In
+              else
+                div
+                  a.nav__link(href='/users/profile') Profile
+                div
+                  a.nav__link(href="/logout") Logout
+      
+      block parallax
+
+    
+    .container
+      block bar
+      block content
+
+    
+    footer.footer 
+      p © 2022 by Caroline Ning
+      a(href="https://www.instagram.com/carrot_line_/", target="_blank")
+        i.fa-brands.fa-instagram
+        
+
+  

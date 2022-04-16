@@ -1,0 +1,27 @@
+extends navFooter 
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/quiz.css')
+
+block scripts 
+  script(async, defer, src='/javascripts/quizData.js')
+  script(async, defer, src='/javascripts/quizRenderer.js')
+
+block content
+    .quizWrap.column
+        .quiz-title
+        p.correct-count.hide Score:
+        p.question.hide Question
+        .q-container.hide
+            .btn-grid
+            div Q1
+            div Q2
+            //- div Q3
+            //- div Q4
+        .btn-container
+            button.start-btn Start
+            button.start-btn.next-btn.hide Next
+            form(method="post")
+                button.sub-btn.hide Submit
+        p.grade Passing Score: 60
+            

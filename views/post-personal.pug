@@ -1,0 +1,9 @@
+extends post 
+
+block editDelete
+  div
+    a(href="/forum/"+post.category+"/" + post.postId + "/edit", title=post.title)
+      button Edit
+  div
+    form(method="post", action="/forum/"+post.category+"/" + post.postId + "/delete")
+      button Delete

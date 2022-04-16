@@ -1,0 +1,9 @@
+extends navFooterBar
+
+block variables
+  - var title = "test Unauthenticated"
+
+block content
+  .wrap
+    h2 Whoops!
+    p(style='line-height:3rem') You must be signed in to view this page. Please #[a(href="/google", title="Login") login] to view this page.

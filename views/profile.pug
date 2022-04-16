@@ -1,0 +1,84 @@
+extends navFooter 
+
+block variables
+  - const title = 'User'
+  - const imgSrc=user.imgSrc
+
+
+block css 
+  link(rel='stylesheet', href='/stylesheets/profile.css')
+
+block scripts
+  script(async, defer, src='/javascripts/profile.js')
+
+block content
+  .pWrap
+    .left
+      .imgWrap 
+        div
+          img(src=imgSrc)
+        .displayName #{user.displayName}
+        div
+          if user.passed==0
+            i.fa-regular.fa-star
+            span Guest
+          if user.passed==1
+            i.fa-solid.fa-star
+            span Member
+      .menu
+        a(href="#titleP").menuItem.blueBg#fir Profile
+        a(href="#posts").menuItem#sec Posts
+    
+    
+    .right
+      .profile.rightItem
+        #titleP.rTitle Profile
+        p Join: #{user.joinDate}
+        
+      .about.rightItem
+        .titleAWrap
+          span.titleA.rTitle About
+          if edit==undefined
+            span
+              a(href='/users/profile/edit') Edit
+
+        if edit==undefined
+          .userTypes
+            p #{user.mbti}/#{user.enne}/#{user.soci}
+          .desc
+            p #{user.desc}
+
+
+        if edit==true          
+          form(method='post')
+            .typesWrap
+              .typeNames 
+                div MBTI
+                div Enneagram 
+                div Socionic
+              .inputs
+                input(name='mbti')
+                input(name='enne')
+                input(name='soci')
+            textarea(name='desc', cols="60", rows='4', placeHolder='Introduce yourself...',maxlength="200")
+            button.btn Save
+      
+      #posts.rightItem
+        .rTitle.titleA Posts
+        each post in posts
+          .post
+            .titleWrap
+              p #{post.createdAt}
+              a(href="/forum/"+post.category +'/'+ post.postId, title=post.title)= post.title
+            .meta
+              i.fa-regular.fa-message 
+                span xxx
+              i.fa-regular.fa-heart 
+                span xx
+            
+            
+      
+
+    
+
+  
