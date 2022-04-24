@@ -16,8 +16,8 @@ passport.use(
       clientID:
         "855512301778-cs2nql1c469ft8v7u7ta4p6lcp6qat2k.apps.googleusercontent.com",
       clientSecret: "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",
-      // callbackURL: "https://space-unfinished.herokuapp.com/google/callback",
-      callbackURL: "http://localhost:3000/google/callback",
+      callbackURL: "https://space-community.herokuapp.com/google/callback",
+      // callbackURL: "http://localhost:3000/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       models.User.findOne({
