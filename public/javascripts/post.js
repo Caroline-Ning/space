@@ -30,4 +30,12 @@ replyBtns.forEach((btn) => {
 const comments = document.querySelectorAll(".comment");
 const count = document.querySelector("#count");
 count.insertAdjacentHTML("afterbegin", `${comments.length} `);
-// console.log(comments.length);
+
+const likes = document.querySelectorAll(".like");
+likes.forEach((like) => {
+  like.addEventListener("click", () => {
+    console.log("clicked");
+    like.children[0].classList.toggle("hidden");
+    like.children[1].classList.toggle("hidden");
+  });
+});

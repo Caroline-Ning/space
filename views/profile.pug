@@ -38,7 +38,7 @@ block content
       .about.rightItem
         .titleAWrap
           span.titleA.rTitle About
-          if edit==undefined
+          if edit==undefined && user.me ===undefined
             span
               a(href='/users/profile/edit') Edit
 
@@ -72,8 +72,8 @@ block content
               a(href="/forum/"+post.category +'/'+ post.postId, title=post.title)= post.title
             .meta
               i.fa-regular.fa-message 
-                span xxx
-              i.fa-regular.fa-heart 
+                span #{post.commentCount}
+              //- i.fa-regular.fa-heart 
                 span xx
             
             

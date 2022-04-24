@@ -14,7 +14,11 @@ block bar
     div 
       if(category=='Mbti')
         a(href="/forum/mbti") MBTI
-      if(category!=='Mbti')
+      if(category=='Other')
+        a(href="/forum/other") Other Personality Theories
+      if(category=='Generalpsychology')
+        a(href="/forum/other") General Psychology
+      if(category!=='Mbti' && category!=='Other' && category!=='Generalpsychology')
         a(href="/forum/"+category.toLowerCase()) #{category}
     input(
       type='text'
@@ -24,7 +28,12 @@ block bar
 block content
   .wrap
     .inner
-      .postTitle Create a Post in #{category}
+      if(category=='Other')
+        .postTitle Create a Post in Other Personality Theories
+      if(category=='Generalpsychology')
+        .postTitle Create a Post in General Psychology
+      if(category!=='Other'&& category!=='Generalpsychology')
+        .postTitle Create a Post in #{category}
 
       //- if post != undefined
       //-   .div

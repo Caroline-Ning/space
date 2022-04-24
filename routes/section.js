@@ -10,4 +10,8 @@ router.get("/forum", (req, res, next) => {
   res.render("forum");
 });
 
+router.get("/teaparty", (req, res, next) => {
+  res.render("teaparty");
+});
+
 module.exports = router;

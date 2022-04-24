@@ -26,6 +26,7 @@
   font-family: "libre baskerville", sans-serif;
   font-size: 1.8rem;
   letter-spacing: 0.15rem;
+  margin-bottom: 0.6rem;
 }
 
 .allPosts {
@@ -52,7 +53,7 @@
 }
 
 .postsTop span:first-child {
-  width: 170px;
+  width: 220px;
 }
 
 .smallCateName {
@@ -117,6 +118,8 @@
 
   align-self: center;
   justify-self: center;
+
+  position: relative;
 }
 
 .post:last-child {
@@ -135,5 +138,6 @@
 }
 
 .count {
-  margin-left: 36.3%;
+  position: absolute;
+  margin-left: 78%;
 }

@@ -58,16 +58,96 @@ router.get("/profile", ensureAuthenticated, (req, res, next) => {
           posts,
           (post, callback) => {
             post = post.get({ plain: true });
-            postData.push({
-              postId: post.postId,
-              category: post.category,
-              title: post.title,
-              createdAt: showDate(post.createdAt),
-              authorName: userData.displayName,
+
+            models.Comment.count({
+              where: {
+                postId: post.postId,
+              },
+            }).then((count) => {
+              commentCount = count;
+              postData.push({
+                postId: post.postId,
+                category: post.category,
+                title: post.title,
+                createdAt: showDate(post.createdAt),
+                authorName: userData.displayName,
+                commentCount: commentCount,
+              });
+              callback();
             });
-            callback();
           },
           (err) => {
+            return res.render("profile", { user: userData, posts: postData });
+          }
+        );
+      });
+    });
+});
+
+//------------------ see other user profile page -------------------------
+router.get("/:userid", (req, res, next) => {
+  if (req.params.userid === req.user.id) {
+    res.redirect("/users/profile");
+  }
+
+  models.User.findOne({
+    where: {
+      userId: req.params.userid,
+    },
+  })
+    .then((user) => {
+      const mbti = user.mbti ? user.mbti : "mbti";
+      const enne = user.enne ? user.enne : "ennegram";
+      const soci = user.soci ? user.soci : "socinic";
+      const desc = user.desc ? user.desc : "Introduce yourself...";
+
+      const userData = {
+        displayName: user.displayName,
+        imgSrc: user.imgSrc,
+        joinDate: showDate(user.createdAt),
+        mbti: mbti,
+        enne: enne,
+        soci: soci,
+        desc: desc,
+        passed: user.passed,
+        me: false,
+      };
+      return userData;
+    })
+    .then((userData) => {
+      models.Post.findAll({
+        where: {
+          authorId: req.params.userid,
+        },
+        order: sequelize.literal("createdAt DESC"),
+      }).then((posts) => {
+        let postData = [];
+        let commentCount;
+
+        async.eachSeries(
+          posts,
+          (post, callback) => {
+            post = post.get({ plain: true });
+
+            models.Comment.count({
+              where: {
+                postId: post.postId,
+              },
+            }).then((count) => {
+              commentCount = count;
+              postData.push({
+                postId: post.postId,
+                category: post.category,
+                title: post.title,
+                createdAt: showDate(post.createdAt),
+                authorName: userData.displayName,
+                commentCount: commentCount,
+              });
+              callback();
+            });
+          },
+          (err) => {
+            console.log(postData);
             return res.render("profile", { user: userData, posts: postData });
           }
         );
@@ -102,14 +182,23 @@ router.get("/profile/edit", ensureAuthenticated, (req, res) => {
           posts,
           (post, callback) => {
             post = post.get({ plain: true });
-            postData.push({
-              postId: post.postId,
-              category: post.category,
-              title: post.title,
-              createdAt: showDate(post.createdAt),
-              authorName: userData.displayName,
+
+            models.Comment.count({
+              where: {
+                postId: post.postId,
+              },
+            }).then((count) => {
+              commentCount = count;
+              postData.push({
+                postId: post.postId,
+                category: post.category,
+                title: post.title,
+                createdAt: showDate(post.createdAt),
+                authorName: userData.displayName,
+                commentCount: commentCount,
+              });
+              callback();
             });
-            callback();
           },
           (err) => {
             const edit = true;

@@ -11,10 +11,10 @@ block bar
     block subCategory
       //- div 
       //-   a(href="/forum/") #{title}
-    input(
-      type='text'
-      id='search'
-    )
+    //- input(
+    //-   type='text'
+    //-   id='search'
+    //- )
 
 
 block content 
@@ -34,8 +34,8 @@ block content
     .postsMeta 
       span
         i.fa-regular.fa-message
-      span
-        i.fa-regular.fa-heart
+      //- span
+      //-   i.fa-regular.fa-heart
       span
         i.fa-regular.fa-user
         
@@ -44,7 +44,7 @@ block content
         .post
           a(href="/forum/"+post.category +'/'+ post.postId, title=post.title)= post.title
           span.count #{post.commentCount}
-          span #{post.authorName}
+          a(href="/users/"+post.authorId) #{post.authorName}
 
       
 

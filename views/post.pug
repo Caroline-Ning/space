@@ -16,12 +16,14 @@ block bar
     div
       if post.category=='mbti'
         a(href="/forum/"+post.category) MBTI
-      if post.category!=='mbti'
+      if(post.category=='other')
+        a(href="/forum/other") Other Personality Theories
+      if(post.category!=='mbti' && post.category!=='other')
         a(href="/forum/"+post.category) #{post.category[0].toUpperCase()+post.category.slice(1)}
-    input(
+    //- input(
       type='text'
       id='search'
-    )
+    //- )
 
 block content
   .wrap
@@ -30,7 +32,8 @@ block content
         .authorDate
           div
             i.fa-regular.fa-user
-            span &nbsp #{post.authorName}
+            span &nbsp 
+              a(href='/users/'+post.authorId) #{post.authorName}
           div
             span &nbsp #{post.date}
         .postTitle #{title}
@@ -39,8 +42,11 @@ block content
           div
             i.fa-regular.fa-message
             span.commentScroll &nbsp Comment
-          div
-            i.fa-regular.fa-heart
+          .like
+            span
+              i.fa-regular.fa-heart
+            span.hidden
+              i.fa-solid.fa-heart
             span &nbsp Like
 
 
@@ -64,7 +70,8 @@ block content
             .dateWrap
               div
                 i.fa-regular.fa-user
-                span &nbsp #{comment.authorName}
+                span &nbsp
+                  a(href='/users/'+comment.authorId) #{comment.authorName}
               div
                 span &nbsp #{comment.date}
           
@@ -74,8 +81,11 @@ block content
               .replyBtn(data-id=comment.commentId)
                 i.fa-regular.fa-message
                 span &nbsp Reply
-              div
-                i.fa-regular.fa-heart
+              .like
+                span
+                  i.fa-regular.fa-heart
+                span.hidden
+                  i.fa-solid.fa-heart
                 span &nbsp Like
               div
                 if comment.myComment==true 
@@ -99,7 +109,8 @@ block content
                         .dateWrap
                           div 
                             i.fa-regular.fa-user &nbsp
-                            span #{reply.authorName}
+                            span &nbsp
+                              a(href='/users/'+reply.authorId) #{reply.authorName}
                           div #{reply.date}
                     
                       div
@@ -107,8 +118,11 @@ block content
 
                 
                       .replyActions
-                        div
-                          i.fa-regular.fa-heart
+                        .like
+                          span
+                            i.fa-regular.fa-heart
+                          span.hidden
+                            i.fa-solid.fa-heart
                           span &nbsp Like
                         div
                           if reply.myReply==true 
@@ -132,7 +146,7 @@ block content
           i.fa-regular.fa-message 
           span &nbsp &nbsp
           span#count comments
-        div
+        //- div
           i.fa-regular.fa-heart 
           span &nbsp&nbsp10
 

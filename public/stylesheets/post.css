@@ -184,6 +184,10 @@ button {
   margin-right: 5%;
 }
 
+.authorDate a,
+.dateWrap a {
+  text-decoration: none;
+}
 .topPost {
   border-bottom: 1px solid rgb(125, 125, 125);
   padding-bottom: 20px;

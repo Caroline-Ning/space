@@ -72,6 +72,7 @@ router.get("/:cate", (req, res) => {
           },
         }).then((user) => {
           postData.push({
+            authorId: post.authorId,
             postId: post.postId,
             category: post.category,
             title: post.title,
@@ -367,6 +368,7 @@ function renderPost(req, res, pug, isAuthor = false) {
               body: comment.body,
               createdAt: comment.createdAt,
               authorName: comment.authorName,
+              authorId: comment.authorId,
               myComment: temp,
               date: showDate(comment.createdAt),
             });
@@ -406,6 +408,7 @@ function renderPost(req, res, pug, isAuthor = false) {
                       body: reply.body,
                       date: showDate(reply.createdAt),
                       authorName: reply.authorName,
+                      authorId: reply.authorId,
                       myReply: temp2,
                     });
                     callback();

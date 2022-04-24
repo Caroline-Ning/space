@@ -1,0 +1,100 @@
+.banner {
+  height: 300px;
+  padding-top: 100px;
+
+  text-align: center;
+  letter-spacing: 0.05rem;
+}
+
+.title {
+  font-family: "libre baskerville", sans-serif;
+  color: rgb(69, 69, 69);
+  font-size: 2rem;
+}
+
+.subt {
+  width: 100%;
+  line-height: 2.5rem;
+  margin: 25px auto 0;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: rgb(118, 118, 118);
+}
+
+.parties {
+  width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 28px;
+  margin-top: 30px;
+  align-self: center;
+}
+
+.party {
+  height: 500px;
+  /* border: 1px solid black; */
+  font-family: "Raleway", sans-serif;
+  transition: all 0.4s;
+  background: rgb(247, 247, 247);
+
+  position: relative;
+}
+
+.partyImg img {
+  width: 100%;
+}
+
+.time {
+  color: #7889b7;
+  font-size: 1.15rem;
+}
+
+.desc {
+  font-family: "Poppins", sans-serif;
+  color: rgb(98, 98, 98);
+  font-weight: 300;
+  letter-spacing: 0.03rem;
+}
+
+.topic {
+  font-size: 1.7rem;
+}
+.join {
+  color: #7889b7;
+  transition: all 0.4s;
+  opacity: 0;
+  transform: translateY(2);
+  cursor: pointer;
+  width: 1px;
+}
+.info {
+  padding: 30px 20px 10px 20px;
+  display: grid;
+  grid-row-gap: 10px;
+  transition: all 0.4s;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: inherit;
+  height: 220px;
+  background: rgb(247, 247, 247);
+}
+
+.party:hover {
+  box-shadow: 0 1px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.party:hover .info {
+  /* transform: translateY(-10px); */
+  bottom: 10px;
+}
+
+.party:hover .join {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.join:hover {
+  color: var(--color-darkGrey);
+}

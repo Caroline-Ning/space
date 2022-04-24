@@ -21,7 +21,7 @@
 
 .subt {
   font-family: "Raleway", sans-serif;
-  color: rgb(91, 91, 91);
+  color: rgb(118, 118, 118);
 }
 
 .cat {
@@ -45,7 +45,12 @@
 #bigf {
   background-image: url(../images/forum/roll.jpg);
 }
-
+#gene {
+  background-image: url(../images/forum/snow.jpg);
+}
+#othe {
+  background-image: url(../images/forum/book.jpg);
+}
 .layer {
   transition: all 0.3s;
   height: 300px;
@@ -63,6 +68,8 @@
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 2rem;
+  line-height: 2.8rem;
+  text-align: center;
 
   padding: 0 10px;
 }

@@ -3,7 +3,6 @@ const links = document.querySelectorAll(".link");
 
 links.forEach((link) => {
   const layer = link.previousSibling;
-  console.log(layer);
   layer.addEventListener("mouseover", () => {
     link.style.color = "white";
     link.classList.remove("linkBg");
