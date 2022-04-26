@@ -166,6 +166,7 @@ router.get("/profile/edit", ensureAuthenticated, (req, res) => {
         displayName: user.displayName,
         imgSrc: user.imgSrc,
         joinDate: showDate(user.createdAt),
+        passed: user.passed,
       };
       return userData;
     })
